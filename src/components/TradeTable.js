@@ -51,23 +51,24 @@ export class TradeTable extends Component {
                 <Table striped bordered hover variant="dark">  
         <thead>
                 <tr>
-                   <th>TimeStamp</th>
+                  
                     <th colSpan="3">CE</th>
                     <th colSpan="3">PE</th>
+                    <th>TimeStamp</th>
                 </tr>
-                <tr>
+                <tr> 
+                    <th>OI</th>
+                    <th>Chng OI</th>
+                    <th>Vol</th>
+                    <th>OI</th>
+                    <th>Chng OI</th>
+                    <th>Vol</th>
                     <th>#</th>
-                    <th>OI</th>
-                    <th>Chng OI</th>
-                    <th>Vol</th>
-                    <th>OI</th>
-                    <th>Chng OI</th>
-                    <th>Vol</th>
                 </tr>
             </thead>
             <tbody>
                 {
-                    this.state.tradeData.map(row => (<TableRow data={row}/>))
+                    this.state.tradeData.map(row => (<TableRow key={row.timestamp} data={row}/>))
                 }
             </tbody>     
           </Table>
