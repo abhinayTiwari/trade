@@ -20,7 +20,7 @@ export class TradeTable extends Component {
               const res = await fetch('https://fy7plv8zt3.execute-api.us-east-2.amazonaws.com/v1/tradingdata');
               const tradeData = await res.json();
               this.setState({...this.state,
-                tradeData,
+                tradeData: updateChangeOI(tradeData),
                 lastRefreshed: this.getCurDate()
               })
               console.log("Checked the Database for any new entry.")
@@ -104,6 +104,4 @@ export class TradeTable extends Component {
         )
     }
 }
-
-//this.state.tradeData.map(row => (<TableRow key={row.timestamp} data={row}/>)
 export default TradeTable
