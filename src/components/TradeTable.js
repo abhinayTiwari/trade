@@ -22,7 +22,7 @@ export class TradeTable extends Component {
                 tradeData,
                 lastRefreshed: this.getCurDate()
               })
-              console.log("update data")
+              console.log("Checked the Database for any new entry.")
             }, 30000);
           } catch(e) {
             console.log(e);
@@ -33,11 +33,31 @@ export class TradeTable extends Component {
     updateData(){
         fetch("https://fy7plv8zt3.execute-api.us-east-2.amazonaws.com/v1/tradingdata").then(res=> res.json())
         .then(res=> {
+            res = this.updateChangeOI(res)
             this.setState({...this.state,
                 tradeData:res,
                 lastRefreshed: this.getCurDate()
             })
         })
+    }
+
+    updateChangeOI(data){
+        debugger
+        console.log(data)
+        let newData = [];
+        for(let i=0; i < data.length; i++){
+            if(i == data.length -1) newData.push(data[i]);
+            else{
+                let prevRow = data[i+1];
+                let curRow = data[i];
+                curRow.chng_oi_ce_nifty = curRow.oi_ce_nifty - prevRow.oi_ce_nifty;
+                curRow.chng_oi_pe_nifty = curRow.oi_pe_nifty - prevRow.oi_pe_nifty;
+                curRow.chng_oi_ce_banknifty = curRow.oi_ce_banknifty - prevRow.oi_ce_banknifty;
+                curRow.chng_oi_pe_banknifty = curRow.oi_pe_banknifty - prevRow.oi_pe_banknifty;
+                newData.push(curRow);
+            }
+        }
+        return newData;
     }
 
     getCurDate(){
@@ -51,25 +71,33 @@ export class TradeTable extends Component {
                 <Table striped bordered hover variant="dark">  
         <thead>
                 <tr>
-                  
-                    <th colSpan="3">CE</th>
-                    <th colSpan="3">PE</th>
+                    <th colSpan="4">Nifty</th>
+                    <th colSpan="4">Bank Nifty</th>
                     <th>TimeStamp</th>
+                </tr>
+                <tr>
+                    <th colSpan="2">CE</th>
+                    <th colSpan="2">PE</th>
+                    <th colSpan="2">CE</th>
+                    <th colSpan="2">PE</th>
+                    <th></th>
                 </tr>
                 <tr> 
                     <th>OI</th>
-                    <th>Chng OI</th>
-                    <th>Vol</th>
+                    <th>CHNG OI</th>
                     <th>OI</th>
-                    <th>Chng OI</th>
-                    <th>Vol</th>
-                    <th>#</th>
+                    <th>CHNG OI</th>
+                    <th>OI</th>
+                    <th>CHNG OI</th>
+                    <th>OI</th>
+                    <th>CHNG OI</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                {
-                    this.state.tradeData.map(row => (<TableRow key={row.timestamp} data={row}/>))
-                }
+               {
+                   this.state.tradeData.map(row => (<TableRow key={row.timestamp} data={row}/>))
+               }
             </tbody>     
           </Table>
             </React.Fragment>
@@ -78,4 +106,5 @@ export class TradeTable extends Component {
     }
 }
 
+//this.state.tradeData.map(row => (<TableRow key={row.timestamp} data={row}/>)
 export default TradeTable
