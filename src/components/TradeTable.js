@@ -23,7 +23,7 @@ export class TradeTable extends Component {
                 tradeData: this.updateChangeOI(tradeData),
                 lastRefreshed: this.getCurDate()
               })
-              console.log("Checked the Database for any new entry.")
+              console.log("Checked the Database for any new entry." +  this.state.lastRefreshed)
             }, 180000);
           } catch(e) {
             console.log(e);
