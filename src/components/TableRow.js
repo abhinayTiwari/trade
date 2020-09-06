@@ -30,7 +30,7 @@ function getChangeInOiWithColor(val){
     if(val.indexOf("-")=== 0){
     return (<td className="red">{val}</td>)
     }
-    return (<td className="green">{val}</td>)    
+    return (<td className="green">+{val}</td>)    
 }
 
 export default TableRow
