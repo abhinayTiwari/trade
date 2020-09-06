@@ -24,7 +24,7 @@ export class TradeTable extends Component {
                 lastRefreshed: this.getCurDate()
               })
               console.log("Checked the Database for any new entry.")
-            }, 30000);
+            }, 180000);
           } catch(e) {
             console.log(e);
           }
