@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Table from 'react-bootstrap/Table'
 import TableRow from './TableRow'
+import '../css/table.css';
 
 export class TradeTable extends Component {
     
@@ -68,12 +69,12 @@ export class TradeTable extends Component {
                 <div><span>Last Checked the Database for new entry:</span> <span>{this.state.lastRefreshed}</span></div>
                 <Table striped bordered hover variant="dark">  
         <thead>
-                <tr>
+                <tr className="center">
                     <th colSpan="4">Nifty</th>
                     <th colSpan="4">Bank Nifty</th>
                     <th>TimeStamp</th>
                 </tr>
-                <tr>
+                <tr className="center">
                     <th colSpan="2">CE</th>
                     <th colSpan="2">PE</th>
                     <th colSpan="2">CE</th>

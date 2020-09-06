@@ -1,5 +1,4 @@
 import React from 'react'
-import '../css/table-row.css';
 function TableRow(props) {
     const data = props.data;
     return (
