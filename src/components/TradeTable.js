@@ -66,8 +66,8 @@ export class TradeTable extends Component {
     render() {
         return (
             <React.Fragment>
-                <div><span>Last Checked the Database for new entry:</span> <span>{this.state.lastRefreshed}</span></div>
-                <Table striped bordered hover variant="dark">  
+                <div><span>Last checked the Database for new entry @ </span> <span>{this.state.lastRefreshed}</span></div>
+                <Table striped bordered hover responsive variant="dark">  
         <thead>
                 <tr className="center">
                     <th colSpan="4">Nifty</th>
