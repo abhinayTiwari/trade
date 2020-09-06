@@ -42,8 +42,6 @@ export class TradeTable extends Component {
     }
 
     updateChangeOI(data){
-        debugger
-        console.log(data)
         let newData = [];
         for(let i=0; i < data.length; i++){
             if(i == data.length -1) newData.push(data[i]);
@@ -67,7 +65,7 @@ export class TradeTable extends Component {
     render() {
         return (
             <React.Fragment>
-                <div><span>Last Updated:</span> <span>{this.state.lastRefreshed}</span></div>
+                <div><span>Last Checked the Database for new entry:</span> <span>{this.state.lastRefreshed}</span></div>
                 <Table striped bordered hover variant="dark">  
         <thead>
                 <tr>
