@@ -6,7 +6,7 @@ function Footer() {
     <div className="footer-container">
         <div class="justify-content-center nav">
             <div class="nav-item">
-                <div>&copy;{new Date().getFullYear()} Copyright: IBling Solutions</div>
+                <div>&copy;{new Date().getFullYear()}: Developed by <a href="https://www.facebook.com/IblingSolutions/" target="_blank">IBling Solutions</a></div>
             </div>
         </div>
     </div>    
