@@ -98,7 +98,7 @@ export class TradeTable extends Component {
                }
             </tbody>     
           </Table>
-          <div><span>Last Database entry @ </span> <span>{this.state.lastRefreshed}</span></div>
+          <div><span>Last Refreshed @ </span> <span>{this.state.lastRefreshed}</span></div>
             </React.Fragment>
             
         )
