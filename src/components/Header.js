@@ -13,9 +13,9 @@ function Header() {
                 height="30"
                 className="d-inline-block align-top"
             />{' '}
-             IBling Solutions
+             NSE DATA
             </Navbar.Brand>
-            <EmptyTableButton />
+            {/* <EmptyTableButton /> */}
        </Navbar>
     )
 }
