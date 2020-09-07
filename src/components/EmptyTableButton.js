@@ -43,7 +43,7 @@ export class EmptyTableButton extends Component {
     }
 
     render() {
-        return (
+        return ( 
             <div className="button-container">
                 <Button variant="danger" onClick={this.clearDatabase.bind(this)}>
                     { this.state.status? "Clear Database" : "Clearing..."}
