@@ -66,7 +66,6 @@ export class TradeTable extends Component {
     render() {
         return (
             <React.Fragment>
-                <div><span>Last checked the Database for new entry @ </span> <span>{this.state.lastRefreshed}</span></div>
                 <Table striped bordered hover responsive variant="dark">  
         <thead>
                 <tr className="center">
@@ -99,8 +98,8 @@ export class TradeTable extends Component {
                }
             </tbody>     
           </Table>
+          <div><span>Last Database entry @ </span> <span>{this.state.lastRefreshed}</span></div>
             </React.Fragment>
-            
         )
     }
 }

@@ -1,0 +1,9 @@
+.footer-container{
+    background: #343a40;
+    color: white;
+    height: 51px;
+}
+
+.footer-container .nav-item{
+    padding-top: 13px;
+}
