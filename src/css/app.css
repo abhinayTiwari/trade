@@ -1,0 +1,10 @@
+#root{
+    background-image: url(https://c.pxhere.com/photos/e6/87/stock_trading_monitor_desk_business_finance_exchange_investment-1170475.jpg!d);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.button-container{
+    position: absolute;
+    right: 3%;
+}
