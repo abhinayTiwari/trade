@@ -9,3 +9,7 @@ td.red{
 .center{
     text-align: center;
 }
+
+tbody{
+    font-weight: 600;
+}
