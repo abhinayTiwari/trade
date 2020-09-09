@@ -14,7 +14,7 @@ function Header() {
                 className="d-inline-block align-top"
             />{' '}
              NSE DATA
-            </Navbar.Brand>
+            </Navbar.Brand> 
             <EmptyTableButton />
        </Navbar>
     )
