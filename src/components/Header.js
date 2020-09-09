@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
+import EmptyTableButton from './EmptyTableButton'
 
 function Header() {
     return (
@@ -14,6 +15,7 @@ function Header() {
             />{' '}
              NSE DATA
             </Navbar.Brand>
+            <EmptyTableButton />
        </Navbar>
     )
 }
